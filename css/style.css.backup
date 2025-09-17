@@ -1,4 +1,13 @@
+/* -------------------------------------------
 
+Name: 		Ruizarch
+Version:    1.0
+Developer:	Nazar Miller (millerDigitalDesign)
+Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
+
+p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
+
+------------------------------------------- */
 /*--------------------------------------------
 
 1. common
@@ -1434,12 +1443,12 @@ menu
 }
 @media screen and (max-width: 1200px) {
   .mil-menu-frame .mil-menu-right-frame {
-    padding-left: 30px; border-left: none;
+    display: none;
   }
 }
 @media screen and (max-height: 800px) {
   .mil-menu-frame .mil-menu-right-frame {
-    padding-bottom: 30px;
+    display: none;
   }
 }
 .mil-menu-frame.mil-active {
@@ -4218,19 +4227,4 @@ html.is-animating .mil-menu-frame {
   opacity: 0;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
-}
-
-@media screen and (max-width: 1200px) {
-  .mil-menu-frame .mil-menu-right-frame {
-    padding-left: 30px;
-    border-left: none;
-  }
-}
-@media screen and (max-height: 800px) {
-  .mil-menu-frame .mil-menu-right-frame {
-    padding-bottom: 30px;
-  }
-}
-.mil-menu-frame.mil-active {
-  opacity: 1;
 }
