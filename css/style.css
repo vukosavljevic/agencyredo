@@ -1445,6 +1445,9 @@ menu
 .mil-menu-frame.mil-active {
   opacity: 1;
   pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mil-menu-frame.mil-active .container {
   pointer-events: all;

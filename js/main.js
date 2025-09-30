@@ -45,6 +45,8 @@ $(function () {
 
     ***************************/
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    // mobile detection helper
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     /***************************
 
     color variables
@@ -111,20 +113,27 @@ $(function () {
         opacity: 0,
         ease: 'sine',
     }, "+=.2");
-    timeline.fromTo(".mil-up", 0.8, {
-        opacity: 0,
-        y: 40,
-        scale: .98,
-        ease: 'sine',
+    // Avoid preloader re-animating sections on mobile to prevent double animations
+    if (!isMobile) {
+        timeline.fromTo(".mil-up", 0.8, {
+            opacity: 0,
+            y: 40,
+            scale: .98,
+            ease: 'sine',
 
-    }, {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        onComplete: function () {
+        }, {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            onComplete: function () {
+                $('.mil-preloader').addClass("mil-hidden");
+            },
+        }, "-=1");
+    } else {
+        timeline.add(function() {
             $('.mil-preloader').addClass("mil-hidden");
-        },
-    }, "-=1");
+        });
+    }
     /***************************
 
     anchor scroll
@@ -425,29 +434,32 @@ $(function () {
             duration: .4,
             scrollTrigger: {
                 trigger: section,
-                toggleActions: 'play none none reverse',
+                toggleActions: isMobile ? 'play none none none' : 'play none none reverse',
+                once: isMobile
             }
         });
     });
 
     const scaleImage = document.querySelectorAll(".mil-scale");
 
-    scaleImage.forEach((section) => {
-        var value1 = $(section).data("value-1");
-        var value2 = $(section).data("value-2");
-        gsap.fromTo(section, {
-            ease: 'sine',
-            scale: value1,
+    if (!isMobile) {
+        scaleImage.forEach((section) => {
+            var value1 = $(section).data("value-1");
+            var value2 = $(section).data("value-2");
+            gsap.fromTo(section, {
+                ease: 'sine',
+                scale: value1,
 
-        }, {
-            scale: value2,
-            scrollTrigger: {
-                trigger: section,
-                scrub: true,
-                toggleActions: 'play none none reverse',
-            }
+            }, {
+                scale: value2,
+                scrollTrigger: {
+                    trigger: section,
+                    scrub: true,
+                    toggleActions: 'play none none reverse',
+                }
+            });
         });
-    });
+    }
 
     const parallaxImage = document.querySelectorAll(".mil-parallax");
 

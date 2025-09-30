@@ -25,6 +25,41 @@
                 display: none !important;
             }
         }
+        
+        /* Desktop menu positioning */
+        @media (min-width: 769px) {
+            .mil-menu-frame {
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+            }
+            
+            .mil-menu-content {
+                display: flex !important;
+                align-items: center !important;
+                min-height: 100vh !important;
+            }
+            
+            .mil-menu-content .row {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+        }
+        
+        /* Animation optimizations for mobile */
+        @media (max-width: 768px) {
+            .mil-up {
+                animation-duration: 0.3s !important;
+            }
+            
+            .mil-animation {
+                will-change: auto !important;
+                transform: none !important;
+            }
+            
+            .mil-scale {
+                transform: none !important;
+            }
+        }
     </style>
     <!-- page name -->
     <title>Usluga - Redo Agency</title>
