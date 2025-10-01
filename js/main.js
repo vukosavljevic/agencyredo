@@ -584,6 +584,16 @@ $(function () {
             el: '.swiper-portfolio-pagination',
             type: 'fraction',
         },
+        on: {
+            slideChangeTransitionStart: function () {
+                // Disable all links during transition
+                $('.mil-portfolio-slider .mil-descr').css('pointer-events', 'none');
+            },
+            slideChangeTransitionEnd: function () {
+                // Enable only active slide link after transition
+                $('.swiper-slide-active .mil-portfolio-item .mil-descr').css('pointer-events', 'all');
+            }
+        }
     });
     /***************************
 
@@ -1027,6 +1037,16 @@ $(function () {
                 el: '.swiper-portfolio-pagination',
                 type: 'fraction',
             },
+            on: {
+                slideChangeTransitionStart: function () {
+                    // Disable all links during transition
+                    $('.mil-portfolio-slider .mil-descr').css('pointer-events', 'none');
+                },
+                slideChangeTransitionEnd: function () {
+                    // Enable only active slide link after transition
+                    $('.swiper-slide-active .mil-portfolio-item .mil-descr').css('pointer-events', 'all');
+                }
+            }
         });
         /***************************
 

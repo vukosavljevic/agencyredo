@@ -21,17 +21,16 @@
     <!-- mobile menu styles -->
     <style>
         @media (max-width: 768px) {
-            .mil-menu-right-frame .col-lg-8,
-            .mil-menu-right-frame .col-lg-4 {
-                display: none !important;
-            }
+            .mil-menu-right-frame { display: none !important; }
+            .mil-preloader:not(.mil-hidden) ~ .mil-frame .mil-frame-top { display: none !important; }
+            .mil-preloader:not(.mil-hidden) ~ .mil-menu-frame .mil-frame-top { display: none !important; }
         }
         
         /* Desktop menu positioning */
         @media (min-width: 769px) {
             .mil-menu-frame {
-                top: 50% !important;
-                transform: translateY(-50%) !important;
+                top: 0 !important;
+                transform: none !important;
             }
             
             .mil-menu-content {
@@ -40,6 +39,7 @@
                 min-height: 100vh !important;
             }
             
+
             .mil-menu-content .row {
                 width: 100% !important;
                 margin: 0 !important;
@@ -71,6 +71,35 @@
 
     <!-- wrapper -->
     <div class="mil-wrapper" id="top">
+
+        <!-- cursor -->
+        <div class="mil-ball">
+            <span class="mil-icon-1">
+                <svg viewBox="0 0 128 128">
+                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
+                </svg>
+            </span>
+            <div class="mil-more-text">More</div>
+            <div class="mil-choose-text">Сhoose</div>
+        </div>
+        <!-- cursor end -->
+
+        <!-- preloader -->
+        <div class="mil-preloader">
+            <div class="mil-preloader-animation">
+                <div class="mil-pos-abs mil-animation-1">
+                    <p class="mil-h3 mil-muted mil-thin">Kreativnost</p>
+                    <p class="mil-h3 mil-muted">Inovacije</p>
+                    <p class="mil-h3 mil-muted mil-thin">Izvrsnost</p>
+                </div>
+                <div class="mil-pos-abs mil-animation-2">
+                    <div class="mil-reveal-frame">
+                        <p class="mil-reveal-box"></p>
+                        <p class="mil-h3 mil-light mil-thin">agencyredo.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- preloader end -->
 
         <!-- scrollbar progress -->
@@ -105,9 +134,7 @@
                                     <li class="mil-has-children">
                                         <a href="services.html">Usluge</a>
                                     </li>
-                                    <li class="mil-has-children mil-active">
-                                        <a href="team.html">O nama</a>
-                                    </li>
+
                                 </ul>
                             </nav>
                         </div>
@@ -119,7 +146,7 @@
                                         <div class="mil-animation mil-position-1 mil-scale" data-value-1="2" data-value-2="2"></div>
                                     </div>
                                 </div>
-                                <div class="mil-menu-right">
+                                <div class="mil-menu-right" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
                                     <div class="row">
                                         <div class="col-lg-8 mil-mb-60">
 
@@ -137,34 +164,15 @@
                                             </ul>
 
                                         </div>
-                                        <div class="col-lg-4 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-mb-30">Useful links</h6>
-
-                                            <ul class="mil-menu-list">
-                                                <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                                <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Careers</a></li>
-                                            </ul>
-
-                                        </div>
                                     </div>
                                     <div class="mil-divider mil-mb-60"></div>
-                                    <div class="row justify-content-between">
+                                    <div class="row">
 
                                         <div class="col-lg-4 mil-mb-60">
 
-                                            <h6 class="mil-muted mil-mb-30">Zagreb</h6>
+                                            <h6 class="mil-muted mil-mb-30">Osijek</h6>
 
-                                            <p class="mil-light-soft mil-up">Ilica 242, 10000 Zagreb, Hrvatska <span class="mil-no-wrap">+385 1 234 5678</span></p>
-
-                                        </div>
-                                        <div class="col-lg-4 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-mb-30">Split</h6>
-
-                                            <p class="mil-light-soft">Obala Hrvatskog narodnog preporoda 23, 21000 Split <span class="mil-no-wrap">+385 21 345 678</span></p>
+                                            <p class="mil-light-soft mil-up">agencyredo@gmail.com <span class="mil-no-wrap">+385 92 3762 612</span></p>
 
                                         </div>
                                     </div>
@@ -194,7 +202,7 @@
                 <div class="mil-current-page"></div>
                 <div class="mil-back-to-top">
                     <a href="#top" class="mil-link mil-dark mil-arrow-place">
-                        <span>Back to top</span>
+                        <span>Povratak na vrh</span>
                     </a>
                 </div>
             </div>
@@ -260,7 +268,7 @@
                 <!-- contact form end -->
 
                 <!-- footer -->
-                <footer class="mil-dark-bg">
+                <footer class="mil-dark-bg mil-footer">
                     <div class="mi-invert-fix">
                         <div class="container mil-p-120-60">
                             <div class="row justify-content-between">
@@ -277,12 +285,12 @@
 
                                 </div>
                                 <div class="col-md-7 col-lg-6">
-                                    <div class="row justify-content-end">
+                                    <div class="row justify-content-start">
                                         <div class="col-md-6 col-lg-7">
 
                                             <nav class="mil-footer-menu mil-mb-60">
                                                 <ul>
-                                                    <li class="mil-up mil-active">
+                                                    <li class="mil-up">
                                                         <a href="index.html">Početna</a>
                                                     </li>
                                                     <li class="mil-up">
@@ -291,81 +299,48 @@
                                                     <li class="mil-up">
                                                         <a href="services.html">Usluge</a>
                                                     </li>
-                                                    <li class="mil-up">
+                                                    <li class="mil-up mil-active">
                                                         <a href="contact.html">Kontakt</a>
                                                     </li>
+
                                                 </ul>
                                             </nav>
 
                                         </div>
-                                        <div class="col-md-6 col-lg-5">
-
-                                            <ul class="mil-menu-list mil-up mil-mb-60">
-                                                <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                                <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Careers</a></li>
-                                            </ul>
-
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row justify-content-between flex-sm-row-reverse">
-                                <div class="col-md-7 col-lg-6">
-
-                                    <div class="row justify-content-between">
-
-                                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-up mil-mb-30">Zagreb</h6>
-
-                                            <p class="mil-light-soft mil-up">Ilica 242, 10000 Zagreb, Hrvatska <span class="mil-no-wrap">+385 1 234 5678</span></p>
-
-                                        </div>
-                                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-up mil-mb-30">Split</h6>
-
-                                            <p class="mil-light-soft mil-up">Obala Hrvatskog narodnog preporoda 23, 21000 Split <span class="mil-no-wrap">+385 21 345 678</span></p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-4 col-lg-6 mil-mb-60">
+                            <div class="row justify-content-start">
+                                <div class="col-md-4 col-lg-6 mil-mb-20">
 
                                     <div class="mil-vert-between">
                                         <div style="margin: 0;">
                                             <ul class="mil-social-icons mil-up" style="margin: 0; padding: 0;">
-                                                <li><a href="https://www.facebook.com/agencyredo" target="_blank" class="social-icon"> 
-                                                    <div style="position: relative; display: inline-block; vertical-align: middle;">
-                                                        <i class="far fa-circle" style="font-size: 20px;"></i>
-                                                        <i class="fab fa-facebook-f" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px;"></i>
-                                                    </div>
-                                                </a></li>
-                                                <li><a href="https://www.instagram.com/agency.redo/" target="_blank" class="social-icon"> 
-                                                    <div style="position: relative; display: inline-block; vertical-align: middle;">
-                                                        <i class="far fa-circle" style="font-size: 20px;"></i>
-                                                        <i class="fab fa-instagram" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px;"></i>
-                                                    </div>
-                                                </a></li>
-                                                <li><a href="https://www.linkedin.com/company/agency-redo" target="_blank" class="social-icon"> 
-                                                    <div style="position: relative; display: inline-block; vertical-align: middle;">
-                                                        <i class="far fa-circle" style="font-size: 20px;"></i>
-                                                        <i class="fab fa-linkedin-in" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px;"></i>
-                                                    </div>
-                                                </a></li>
-                                                <li><a href="https://twitter.com/agencyredo" target="_blank" class="social-icon"> 
-                                                    <div style="position: relative; display: inline-block; vertical-align: middle;">
-                                                        <i class="far fa-circle" style="font-size: 20px;"></i>
-                                                        <i class="fab fa-twitter" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 10px;"></i>
-                                                    </div>
-                                                </a></li>
+                                                <li>
+                                                    <a href="https://www.facebook.com/agencyredo" target="_blank" class="social-icon" aria-label="Facebook">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.instagram.com/agency.redo/" target="_blank" class="social-icon" aria-label="Instagram">
+                                                        <i class="fab fa-instagram"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.linkedin.com/company/agency-redo" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.facebook.com/agencyredo" target="_blank" class="social-icon" aria-label="Twitter">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2024 - Redo Agency. Sva prava pridržana.</p>
+                                        <p class="mil-light-soft mil-up mil-footer-copy">© Copyright 2025 - Redo Agency. Sva prava pridržana.</p>
                                     </div>
 
                                 </div>

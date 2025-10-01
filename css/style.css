@@ -120,6 +120,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   height: 100%;
 }
 
@@ -1437,11 +1440,6 @@ menu
     padding-left: 30px; border-left: none;
   }
 }
-@media screen and (max-height: 800px) {
-  .mil-menu-frame .mil-menu-right-frame {
-    padding-bottom: 30px;
-  }
-}
 .mil-menu-frame.mil-active {
   opacity: 1;
   pointer-events: all;
@@ -2642,9 +2640,26 @@ social icons
   font-size: 18px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(4px);
 }
 .mil-social-icons li a:hover {
-  color: rgb(255, 152, 0);
+  color: rgb(0, 0, 0);
+  background: rgb(255, 152, 0);
+  border-color: rgb(255, 152, 0);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 .mil-social-icons.mil-dark li a {
   color: rgb(0, 0, 0);
@@ -3005,9 +3020,13 @@ blog
 footer
 
 ------------------------------------------- */
+.mil-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 .mil-footer-menu {
   margin-bottom: 120px;
 }
+.mil-footer-copy { margin-top: 20px; text-align: left; }
 .mil-footer-menu ul li {
   list-style-type: none;
   margin-bottom: 30px;
@@ -3208,10 +3227,24 @@ portfolio
 }
 
 .swiper-slide .mil-portfolio-item .mil-descr {
-  pointer-events: none;
+  pointer-events: none !important;
+  cursor: default;
 }
 .swiper-slide.swiper-slide-active .mil-portfolio-item .mil-descr {
-  pointer-events: all;
+  pointer-events: all !important;
+  cursor: pointer;
+}
+.swiper-slide:not(.swiper-slide-active) .mil-portfolio-item a.mil-descr {
+  pointer-events: none !important;
+}
+a.mil-descr {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+a.mil-descr:hover .mil-button {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .mil-portfolio {
@@ -4227,11 +4260,6 @@ html.is-animating .mil-menu-frame {
   .mil-menu-frame .mil-menu-right-frame {
     padding-left: 30px;
     border-left: none;
-  }
-}
-@media screen and (max-height: 800px) {
-  .mil-menu-frame .mil-menu-right-frame {
-    padding-bottom: 30px;
   }
 }
 .mil-menu-frame.mil-active {
